@@ -1,0 +1,4 @@
+fragment OrganizationBadge_organization on Organization {
+  name
+  website
+}

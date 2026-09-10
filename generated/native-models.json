@@ -1,0 +1,1459 @@
+{
+  "models": [
+    {
+      "name": "AndroidAvatarFragmentData",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "kotlin",
+      "proto": false
+    },
+    {
+      "name": "AndroidOrganizationBadgeFragmentData",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "kotlin",
+      "proto": false
+    },
+    {
+      "name": "AndroidUserCardFragmentData_Organization",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "kotlin",
+      "proto": false
+    },
+    {
+      "name": "AndroidUserCardFragmentData",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "organization",
+          "coordinate": "User.organization",
+          "args": {},
+          "type": "AndroidUserCardFragmentData_Organization",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "kotlin",
+      "proto": false
+    },
+    {
+      "name": "IosAvatarFragmentData",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "swift",
+      "proto": false
+    },
+    {
+      "name": "IosOrganizationBadgeFragmentData",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "swift",
+      "proto": false
+    },
+    {
+      "name": "IosUserCardFragmentData_Organization",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "swift",
+      "proto": false
+    },
+    {
+      "name": "IosUserCardFragmentData",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "organization",
+          "coordinate": "User.organization",
+          "args": {},
+          "type": "IosUserCardFragmentData_Organization",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "swift",
+      "proto": false
+    },
+    {
+      "name": "GetIosUserPageResponse_User_Organization",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "swift",
+      "proto": true
+    },
+    {
+      "name": "GetIosUserPageResponse_User",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "organization",
+          "coordinate": "User.organization",
+          "args": {},
+          "type": "GetIosUserPageResponse_User_Organization",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "swift",
+      "proto": true
+    },
+    {
+      "name": "GetIosUserPageResponse",
+      "schemaType": "Query",
+      "fields": [
+        {
+          "name": "user",
+          "coordinate": "Query.user",
+          "args": {
+            "id": {
+              "variable": "id"
+            }
+          },
+          "type": "GetIosUserPageResponse_User",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "swift",
+      "proto": true
+    },
+    {
+      "name": "GetIosUserSummaryResponse_User",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "swift",
+      "proto": true
+    },
+    {
+      "name": "GetIosUserSummaryResponse",
+      "schemaType": "Query",
+      "fields": [
+        {
+          "name": "user",
+          "coordinate": "Query.user",
+          "args": {
+            "id": {
+              "variable": "id"
+            }
+          },
+          "type": "GetIosUserSummaryResponse_User",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "swift",
+      "proto": true
+    },
+    {
+      "name": "GetAndroidUserPageResponse_User_Organization",
+      "schemaType": "Organization",
+      "fields": [
+        {
+          "name": "name",
+          "coordinate": "Organization.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "website",
+          "coordinate": "Organization.website",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "kotlin",
+      "proto": true
+    },
+    {
+      "name": "GetAndroidUserPageResponse_User",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "avatarUrl",
+          "coordinate": "User.avatarUrl",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "organization",
+          "coordinate": "User.organization",
+          "args": {},
+          "type": "GetAndroidUserPageResponse_User_Organization",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "kotlin",
+      "proto": true
+    },
+    {
+      "name": "GetAndroidUserPageResponse",
+      "schemaType": "Query",
+      "fields": [
+        {
+          "name": "user",
+          "coordinate": "Query.user",
+          "args": {
+            "id": {
+              "variable": "id"
+            }
+          },
+          "type": "GetAndroidUserPageResponse_User",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "kotlin",
+      "proto": true
+    },
+    {
+      "name": "GetAndroidUserSummaryResponse_User",
+      "schemaType": "User",
+      "fields": [
+        {
+          "name": "id",
+          "coordinate": "User.id",
+          "args": {},
+          "type": "ID",
+          "optional": false,
+          "list": false,
+          "object": false
+        },
+        {
+          "name": "name",
+          "coordinate": "User.name",
+          "args": {},
+          "type": "String",
+          "optional": false,
+          "list": false,
+          "object": false
+        }
+      ],
+      "language": "kotlin",
+      "proto": true
+    },
+    {
+      "name": "GetAndroidUserSummaryResponse",
+      "schemaType": "Query",
+      "fields": [
+        {
+          "name": "user",
+          "coordinate": "Query.user",
+          "args": {
+            "id": {
+              "variable": "id"
+            }
+          },
+          "type": "GetAndroidUserSummaryResponse_User",
+          "optional": true,
+          "list": false,
+          "object": true
+        }
+      ],
+      "language": "kotlin",
+      "proto": true
+    }
+  ],
+  "conversions": [
+    {
+      "from": {
+        "name": "AndroidUserCardFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "AndroidUserCardFragmentData_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      },
+      "to": {
+        "name": "AndroidAvatarFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetAndroidUserPageResponse_User",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "GetAndroidUserPageResponse_User_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "kotlin",
+        "proto": true
+      },
+      "to": {
+        "name": "AndroidAvatarFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "AndroidUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      },
+      "to": {
+        "name": "AndroidOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetAndroidUserPageResponse_User_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": true
+      },
+      "to": {
+        "name": "AndroidOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "AndroidOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      },
+      "to": {
+        "name": "AndroidUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetAndroidUserPageResponse_User_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": true
+      },
+      "to": {
+        "name": "AndroidUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetAndroidUserPageResponse_User",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "GetAndroidUserPageResponse_User_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "kotlin",
+        "proto": true
+      },
+      "to": {
+        "name": "AndroidUserCardFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "AndroidUserCardFragmentData_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "kotlin",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "IosUserCardFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "IosUserCardFragmentData_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      },
+      "to": {
+        "name": "IosAvatarFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetIosUserPageResponse_User",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "GetIosUserPageResponse_User_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "swift",
+        "proto": true
+      },
+      "to": {
+        "name": "IosAvatarFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "IosUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      },
+      "to": {
+        "name": "IosOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetIosUserPageResponse_User_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": true
+      },
+      "to": {
+        "name": "IosOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "IosOrganizationBadgeFragmentData",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      },
+      "to": {
+        "name": "IosUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetIosUserPageResponse_User_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": true
+      },
+      "to": {
+        "name": "IosUserCardFragmentData_Organization",
+        "schemaType": "Organization",
+        "fields": [
+          {
+            "name": "name",
+            "coordinate": "Organization.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "website",
+            "coordinate": "Organization.website",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    },
+    {
+      "from": {
+        "name": "GetIosUserPageResponse_User",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "GetIosUserPageResponse_User_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "swift",
+        "proto": true
+      },
+      "to": {
+        "name": "IosUserCardFragmentData",
+        "schemaType": "User",
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "id",
+            "coordinate": "User.id",
+            "args": {},
+            "type": "ID",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "name",
+            "coordinate": "User.name",
+            "args": {},
+            "type": "String",
+            "optional": false,
+            "list": false,
+            "object": false
+          },
+          {
+            "name": "organization",
+            "coordinate": "User.organization",
+            "args": {},
+            "type": "IosUserCardFragmentData_Organization",
+            "optional": true,
+            "list": false,
+            "object": true
+          }
+        ],
+        "language": "swift",
+        "proto": false
+      }
+    }
+  ],
+  "declarations": [
+    {
+      "declaration": "IosAvatarFragment",
+      "kind": "fragment",
+      "language": "swift",
+      "name": "IosAvatarFragmentData",
+      "document": "fragment IosAvatar_user on User {\n  avatarUrl\n}",
+      "operation": "IosAvatar_user"
+    },
+    {
+      "declaration": "IosOrganizationBadgeFragment",
+      "kind": "fragment",
+      "language": "swift",
+      "name": "IosOrganizationBadgeFragmentData",
+      "document": "fragment IosOrganizationBadge_organization on Organization {\n  name\n  website\n}",
+      "operation": "IosOrganizationBadge_organization"
+    },
+    {
+      "declaration": "IosUserCardFragment",
+      "kind": "fragment",
+      "language": "swift",
+      "name": "IosUserCardFragmentData",
+      "document": "fragment IosUserCard_user on User {\n  id\n  name\n  ...IosAvatar_user\n  organization { ...IosOrganizationBadge_organization }\n}",
+      "operation": "IosUserCard_user"
+    },
+    {
+      "declaration": "IosUserPageQuery",
+      "kind": "query",
+      "language": "swift",
+      "name": "IosUserPageQueryData",
+      "document": "query GetIosUserPage($id: ID!) {\n  user(id: $id) { ...IosUserCard_user }\n}",
+      "operation": "GetIosUserPage"
+    },
+    {
+      "language": "swift",
+      "kind": "query",
+      "declaration": "IosUserSummaryQuery",
+      "name": "IosUserSummaryQueryData",
+      "document": "query GetIosUserSummary($id: ID!) {\n  user(id: $id) { id name }\n}",
+      "operation": "GetIosUserSummary"
+    },
+    {
+      "language": "kotlin",
+      "declaration": "AndroidAvatarFragment",
+      "kind": "fragment",
+      "packageName": "dev.fragmentrpc.avatar",
+      "name": "AndroidAvatarFragmentData",
+      "document": "\nfragment AndroidAvatar_user on User {\n  avatarUrl\n}\n",
+      "operation": "AndroidAvatar_user"
+    },
+    {
+      "language": "kotlin",
+      "declaration": "AndroidOrganizationBadgeFragment",
+      "kind": "fragment",
+      "packageName": "dev.fragmentrpc.organization",
+      "name": "AndroidOrganizationBadgeFragmentData",
+      "document": "\nfragment AndroidOrganizationBadge_organization on Organization {\n  name\n  website\n}\n",
+      "operation": "AndroidOrganizationBadge_organization"
+    },
+    {
+      "language": "kotlin",
+      "declaration": "AndroidUserSummaryQuery",
+      "kind": "query",
+      "packageName": "dev.fragmentrpc.summary",
+      "name": "AndroidUserSummaryQueryData",
+      "document": "\nquery GetAndroidUserSummary($id: ID!) {\n  user(id: $id) { id name }\n}\n",
+      "operation": "GetAndroidUserSummary"
+    },
+    {
+      "language": "kotlin",
+      "declaration": "AndroidUserCardFragment",
+      "kind": "fragment",
+      "packageName": "dev.fragmentrpc.usercard",
+      "name": "AndroidUserCardFragmentData",
+      "document": "\nfragment AndroidUserCard_user on User {\n  id\n  name\n  ...AndroidAvatar_user\n  organization { ...AndroidOrganizationBadge_organization }\n}\n",
+      "operation": "AndroidUserCard_user"
+    },
+    {
+      "language": "kotlin",
+      "declaration": "AndroidUserPageQuery",
+      "kind": "query",
+      "packageName": "dev.fragmentrpc.userpage",
+      "name": "AndroidUserPageQueryData",
+      "document": "\nquery GetAndroidUserPage($id: ID!) {\n  user(id: $id) { ...AndroidUserCard_user }\n}\n",
+      "operation": "GetAndroidUserPage"
+    }
+  ]
+}

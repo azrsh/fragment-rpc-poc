@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "messages": {
+    "GetUserPageRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse_User_Organization": {
+      "fields": {
+        "name": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse_User": {
+      "fields": {
+        "avatarUrl": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "id": {
+          "number": 2,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 3,
+          "signature": "String!"
+        },
+        "organization": {
+          "number": 4,
+          "signature": "Organization?"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryResponse_User": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserPageRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserPageResponse_User_Organization": {
+      "fields": {
+        "name": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserPageResponse_User": {
+      "fields": {
+        "avatarUrl": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "id": {
+          "number": 2,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 3,
+          "signature": "String!"
+        },
+        "organization": {
+          "number": 4,
+          "signature": "Organization?"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserPageResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserSummaryRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserSummaryResponse_User": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserPageRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserPageResponse_User_Organization": {
+      "fields": {
+        "name": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserPageResponse_User": {
+      "fields": {
+        "avatarUrl": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "id": {
+          "number": 2,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 3,
+          "signature": "String!"
+        },
+        "organization": {
+          "number": 4,
+          "signature": "Organization?"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserPageResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserSummaryRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserSummaryResponse_User": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    }
+  }
+}

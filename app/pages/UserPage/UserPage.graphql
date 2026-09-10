@@ -1,0 +1,5 @@
+query GetUserPage($id: ID!) {
+  user(id: $id) {
+    ...UserCard_user
+  }
+}

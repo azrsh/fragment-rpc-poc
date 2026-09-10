@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+set -eu
+exec "$JAVA_HOME/bin/java" -jar "$(dirname "$0")/app/build/codegen/connect-generator.jar"

@@ -1,0 +1,8 @@
+fragment UserCard_user on User {
+  id
+  name
+  ...Avatar_user
+  organization {
+    ...OrganizationBadge_organization
+  }
+}

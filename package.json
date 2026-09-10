@@ -1,0 +1,39 @@
+{
+  "name": "fragment-rpc-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "generate": "tsx compiler/generate.ts",
+    "build": "npm run generate && tsc --noEmit && vite build",
+    "dev": "npm run build && npm start",
+    "start": "tsx server/dev.ts",
+    "demo": "tsx scripts/demo.ts",
+    "test": "npm run generate && tsx --test tests/*.test.ts",
+    "check": "npm run build && npm test",
+    "generate:ios": "bash scripts/generate-ios.sh",
+    "test:ios": "bash scripts/test-ios.sh",
+    "test:android": "bash scripts/test-android.sh"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "2.14.1",
+    "@connectrpc/connect": "2.2.0",
+    "@connectrpc/connect-node": "2.2.0",
+    "@connectrpc/connect-web": "2.2.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@bufbuild/protoc-gen-es": "2.14.1",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "graphql": "17.0.2",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vite": "8.2.2"
+  }
+}

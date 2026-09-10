@@ -1,0 +1,26 @@
+syntax = "proto3";
+package backend.v1;
+
+service UserService {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+service OrganizationService {
+  rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse);
+}
+
+message GetUserRequest { string id = 1; }
+message GetUserResponse { User user = 1; }
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string avatar_url = 4;
+  string organization_id = 5;
+}
+message GetOrganizationRequest { string id = 1; }
+message GetOrganizationResponse { Organization organization = 1; }
+message Organization {
+  string id = 1;
+  string name = 2;
+  string website = 3;
+}

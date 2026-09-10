@@ -1,0 +1,3 @@
+fragment Avatar_user on User {
+  avatarUrl
+}

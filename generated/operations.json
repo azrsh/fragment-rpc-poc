@@ -1,0 +1,386 @@
+[
+  {
+    "name": "GetAndroidUserPage",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "responseName": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "organization",
+            "responseName": "organization",
+            "coordinate": "User.organization",
+            "type": "Organization",
+            "required": false,
+            "list": false,
+            "args": {},
+            "fields": [
+              {
+                "name": "name",
+                "responseName": "name",
+                "coordinate": "Organization.name",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              },
+              {
+                "name": "website",
+                "responseName": "website",
+                "coordinate": "Organization.website",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GetAndroidUserSummary",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GetIosUserPage",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "responseName": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "organization",
+            "responseName": "organization",
+            "coordinate": "User.organization",
+            "type": "Organization",
+            "required": false,
+            "list": false,
+            "args": {},
+            "fields": [
+              {
+                "name": "name",
+                "responseName": "name",
+                "coordinate": "Organization.name",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              },
+              {
+                "name": "website",
+                "responseName": "website",
+                "coordinate": "Organization.website",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GetIosUserSummary",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GetUserPage",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "avatarUrl",
+            "responseName": "avatarUrl",
+            "coordinate": "User.avatarUrl",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "organization",
+            "responseName": "organization",
+            "coordinate": "User.organization",
+            "type": "Organization",
+            "required": false,
+            "list": false,
+            "args": {},
+            "fields": [
+              {
+                "name": "name",
+                "responseName": "name",
+                "coordinate": "Organization.name",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              },
+              {
+                "name": "website",
+                "responseName": "website",
+                "coordinate": "Organization.website",
+                "type": "String",
+                "required": true,
+                "list": false,
+                "args": {}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GetUserSummary",
+    "variables": [
+      {
+        "name": "id",
+        "type": "ID",
+        "required": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "user",
+        "responseName": "user",
+        "coordinate": "Query.user",
+        "type": "User",
+        "required": false,
+        "list": false,
+        "args": {
+          "id": {
+            "variable": "id"
+          }
+        },
+        "fields": [
+          {
+            "name": "id",
+            "responseName": "id",
+            "coordinate": "User.id",
+            "type": "ID",
+            "required": true,
+            "list": false,
+            "args": {}
+          },
+          {
+            "name": "name",
+            "responseName": "name",
+            "coordinate": "User.name",
+            "type": "String",
+            "required": true,
+            "list": false,
+            "args": {}
+          }
+        ]
+      }
+    ]
+  }
+]

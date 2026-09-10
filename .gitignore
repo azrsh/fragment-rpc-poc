@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.local/
+*.log
+.DS_Store
+mobile/android/.gradle/
+mobile/android/**/build/
+mobile/android/local.properties
+mobile/ios/FragmentRPC.xcodeproj/
+mobile/ios/Info.plist
+mobile/swift-graphql/.build/
+mobile/swift-graphql/.swiftpm/

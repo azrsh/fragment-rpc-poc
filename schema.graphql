@@ -1,0 +1,17 @@
+type Query {
+  user(id: ID!): User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  avatarUrl: String!
+  organization: Organization
+}
+
+type Organization {
+  id: ID!
+  name: String!
+  website: String!
+}
