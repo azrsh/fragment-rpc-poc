@@ -1,15 +1,16 @@
 # Fragment RPC PoC
 
-A proof of concept for colocating GraphQL fragments with React, SwiftUI, and Jetpack Compose components, then generating typed Protobuf RPCs at build time. Clients send variables over Connect; the server calls local gRPC backends without a GraphQL runtime.
+A proof of concept for colocating GraphQL fragments with React, SwiftUI, and Jetpack Compose components, then generating typed Protobuf RPCs at build time. The compiler and server are written in Go. Clients send variables over Connect; the server calls local gRPC backends without a GraphQL runtime.
 
 ## Setup
 
-Requires an Apple Silicon Mac, Node.js 22.14+ (22.x recommended), npm, `protoc`, Xcode 26 with Swift 6.2 and an iOS Simulator, and XcodeGen.
+Requires an Apple Silicon Mac, Go 1.24+, Node.js 22.14+ (22.x recommended), npm, `protoc`, Xcode 26 with Swift 6.2 and an iOS Simulator, and XcodeGen. Make `go` available on `PATH` to both Xcode and Gradle.
 
 Generation collects all three clients, so the native tooling is required even when running only the web demo.
 
 ```sh
 npm ci
+go mod download
 bash scripts/setup-swift.sh
 bash scripts/setup-mobile.sh
 bash scripts/build-native-tools.sh
@@ -43,6 +44,15 @@ Web fragments live beside components in `.graphql` files. Native fragments are e
 
 After changing a fragment, restart `npm run dev` and rebuild the relevant native app. There is no hot reload. Use `npm run generate` for generation alone; rebuild the extraction tools with `bash scripts/build-native-tools.sh` after changing them.
 
+The compiler uses gqlparser, SwiftSyntax, and Kotlin PSI. Node.js is needed for the web tooling and Protobuf ES generator. To run the Go server directly after building the clients:
+
+```sh
+go build -o .local/fragment-rpc ./cmd/server
+.local/fragment-rpc -static dist
+```
+
+The executable embeds its operation plans and needs neither Node.js nor GraphQL sources at runtime. Serve the built web assets from `dist`, or pass another directory with `-static`.
+
 Keep `generated/schema.lock.json` under version control alongside the generated contracts. It preserves Protobuf field numbers across changes; do not delete or reset it.
 
 ## Test
@@ -54,7 +64,7 @@ npm run test:ios
 npm run test:android
 ```
 
-The native tests require the local API and their simulator or emulator to be running. They cover API calls and basic UI flows.
+`npm run check` includes Go tests with the race detector and Connect ES interoperability tests. The native tests require the local API and their simulator or emulator to be running. They cover API calls and basic UI flows.
 
 ## Limitations
 

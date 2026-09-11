@@ -1,0 +1,210 @@
+package compiler
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"go/format"
+	"io/fs"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
+)
+
+const modulePath = "github.com/azrsh/fragment-colocation-with-grpc"
+
+func Generate(root string) (int, error) {
+	root, err := filepath.Abs(root)
+	if err != nil {
+		return 0, err
+	}
+	var previous *ContractLock
+	data, err := os.ReadFile(filepath.Join(root, "generated/schema.lock.json"))
+	if err == nil {
+		if err = json.Unmarshal(data, &previous); err != nil {
+			return 0, err
+		}
+	} else if !os.IsNotExist(err) {
+		return 0, err
+	}
+	sources, err := CollectSources(root, nil)
+	if err != nil {
+		return 0, err
+	}
+	sdl, err := os.ReadFile(filepath.Join(root, "schema.graphql"))
+	if err != nil {
+		return 0, err
+	}
+	output, err := Compile(string(sdl), sources, previous)
+	if err != nil {
+		return 0, err
+	}
+	native, err := NativeModels(output, sources)
+	if err != nil {
+		return 0, err
+	}
+	stage, err := os.MkdirTemp("", "fragment-rpc-")
+	if err != nil {
+		return 0, err
+	}
+	defer os.RemoveAll(stage)
+	write := func(path string, data []byte) error {
+		if err := os.MkdirAll(filepath.Dir(filepath.Join(stage, path)), 0755); err != nil {
+			return err
+		}
+		return os.WriteFile(filepath.Join(stage, path), data, 0644)
+	}
+	if err = write("app.proto", []byte(output.Proto)); err != nil {
+		return 0, err
+	}
+	backend, err := os.ReadFile(filepath.Join(root, "proto/backend.proto"))
+	if err != nil {
+		return 0, err
+	}
+	if err = write("backend.proto", backend); err != nil {
+		return 0, err
+	}
+	tools, err := os.MkdirTemp("", "fragment-rpc-tools-")
+	if err != nil {
+		return 0, err
+	}
+	defer os.RemoveAll(tools)
+	run := func(name string, args ...string) error {
+		cmd := exec.Command(name, args...)
+		cmd.Dir = root
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		if err := cmd.Run(); err != nil {
+			return fmt.Errorf("%s: %w", name, err)
+		}
+		return nil
+	}
+	for _, plugin := range []struct{ name, pkg string }{{"go", "google.golang.org/protobuf/cmd/protoc-gen-go"}, {"connect-go", "connectrpc.com/connect/cmd/protoc-gen-connect-go"}} {
+		if err = run("go", "build", "-o", filepath.Join(tools, "protoc-gen-"+plugin.name), plugin.pkg); err != nil {
+			return 0, err
+		}
+	}
+	args := []string{"--proto_path=" + stage, "--plugin=protoc-gen-es=" + filepath.Join(root, "node_modules/.bin/protoc-gen-es"), "--es_out=" + stage, "--es_opt=target=ts,import_extension=js", "--descriptor_set_out=" + filepath.Join(stage, "api.binpb"), "--include_imports"}
+	for _, plugin := range []string{"go", "connect-go"} {
+		args = append(args, "--plugin=protoc-gen-"+plugin+"="+filepath.Join(tools, "protoc-gen-"+plugin), "--"+plugin+"_out="+stage,
+			"--"+plugin+"_opt=module="+modulePath+"/generated",
+			"--"+plugin+"_opt=Mapp.proto="+modulePath+"/generated/appv1",
+			"--"+plugin+"_opt=Mbackend.proto="+modulePath+"/generated/backendv1")
+	}
+	args = append(args, "app.proto", "backend.proto")
+	protoc := os.Getenv("PROTOC")
+	if protoc == "" {
+		protoc = "protoc"
+	}
+	if err = run(protoc, args...); err != nil {
+		return 0, err
+	}
+	routes, err := goRoutes(output)
+	if err != nil {
+		return 0, err
+	}
+	for path, content := range map[string][]byte{"routes.go": routes, "fragments.ts": []byte("// Generated from colocated fragments.\n" + output.FragmentTypes), "NativeFragments.swift": []byte(SwiftModels(native))} {
+		if err = write(path, content); err != nil {
+			return 0, err
+		}
+	}
+	for path, value := range map[string]any{"native-models.json": native, "operations.json": output.Operations, "schema.lock.json": output.Lock} {
+		data, err := json.MarshalIndent(value, "", "  ")
+		if err != nil {
+			return 0, err
+		}
+		if err = write(path, append(data, '\n')); err != nil {
+			return 0, err
+		}
+	}
+	err = filepath.WalkDir(stage, func(path string, e fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if e.IsDir() {
+			return nil
+		}
+		rel, err := filepath.Rel(stage, path)
+		if err != nil {
+			return err
+		}
+		content, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		target := filepath.Join(root, "generated", rel)
+		old, err := os.ReadFile(target)
+		if err == nil && bytes.Equal(old, content) {
+			return nil
+		}
+		if err != nil && !os.IsNotExist(err) {
+			return err
+		}
+		if err = os.MkdirAll(filepath.Dir(target), 0755); err != nil {
+			return err
+		}
+		tmp, err := os.CreateTemp(filepath.Dir(target), ".generate-*.tmp")
+		if err != nil {
+			return err
+		}
+		defer os.Remove(tmp.Name())
+		if _, err = tmp.Write(content); err != nil {
+			tmp.Close()
+			return err
+		}
+		if err = tmp.Chmod(0644); err != nil {
+			tmp.Close()
+			return err
+		}
+		if err = tmp.Close(); err != nil {
+			return err
+		}
+		return os.Rename(tmp.Name(), target)
+	})
+	if err != nil {
+		return 0, err
+	}
+	return len(output.Operations), nil
+}
+
+func goRoutes(output *Output) ([]byte, error) {
+	var b strings.Builder
+	fmt.Fprintf(&b, `// Code generated by go run ./cmd/generate. DO NOT EDIT.
+package generated
+
+import (
+ "context"
+ _ "embed"
+ "encoding/json"
+ "net/http"
+ "connectrpc.com/connect"
+ "%s/generated/appv1"
+ "%s/generated/appv1/appv1connect"
+ "%s/internal/gateway"
+ "%s/internal/plan"
+)
+
+//go:embed operations.json
+var operationsJSON []byte
+
+type service struct { resolvers gateway.Resolvers; plans []plan.Operation }
+
+func NewHandler(resolvers gateway.Resolvers) (string,http.Handler,error) {
+ s:=&service{resolvers:resolvers}
+ if err:=json.Unmarshal(operationsJSON,&s.plans);err!=nil{return "",nil,err}
+ path,handler:=appv1connect.NewAppServiceHandler(s)
+ return path,handler,nil
+}
+`, modulePath, modulePath, modulePath, modulePath)
+	for i, o := range output.Operations {
+		fmt.Fprintf(&b, `
+func (s *service) %s(ctx context.Context,request *connect.Request[appv1.%sRequest]) (*connect.Response[appv1.%sResponse],error) {
+ response:=new(appv1.%sResponse)
+ if err:=gateway.ExecuteMessage(ctx,s.plans[%d],request.Msg,response,s.resolvers);err!=nil{return nil,err}
+ return connect.NewResponse(response),nil
+}
+`, o.Name, o.Name, o.Name, o.Name, i)
+	}
+	return format.Source([]byte(b.String()))
+}

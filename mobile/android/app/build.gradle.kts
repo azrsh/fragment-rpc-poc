@@ -19,10 +19,11 @@ val generateContracts by tasks.registering(Exec::class) {
     dependsOn(":graphql-tools:installDist")
     dependsOn(prepareSwiftExtractor)
     workingDir(rootProject.projectDir.resolve("../.."))
-    commandLine("node", "--import", "tsx", "compiler/generate.ts")
+    commandLine("go", "run", "./cmd/generate")
     inputs.files(fileTree("src/main") { include("**/*.kt", "**/*.graphql") })
     inputs.files(fileTree("../../../mobile/ios/Sources"), fileTree("../../../app") { include("**/*.graphql") })
-    inputs.files(fileTree("../../../compiler"), file("../../../schema.graphql"))
+    inputs.files(fileTree("../../../internal/compiler"), fileTree("../../../internal/plan"), fileTree("../../../cmd/generate"))
+    inputs.files(file("../../../go.mod"), file("../../../go.sum"), file("../../../schema.graphql"), file("../../../proto/backend.proto"))
     outputs.dir("../../../generated")
 }
 

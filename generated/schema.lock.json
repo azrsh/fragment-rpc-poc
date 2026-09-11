@@ -1,89 +1,6 @@
 {
   "version": 1,
   "messages": {
-    "GetUserPageRequest": {
-      "fields": {
-        "id": {
-          "number": 1,
-          "signature": "ID!"
-        }
-      },
-      "retired": []
-    },
-    "GetUserPageResponse_User_Organization": {
-      "fields": {
-        "name": {
-          "number": 1,
-          "signature": "String!"
-        },
-        "website": {
-          "number": 2,
-          "signature": "String!"
-        }
-      },
-      "retired": []
-    },
-    "GetUserPageResponse_User": {
-      "fields": {
-        "avatarUrl": {
-          "number": 1,
-          "signature": "String!"
-        },
-        "id": {
-          "number": 2,
-          "signature": "ID!"
-        },
-        "name": {
-          "number": 3,
-          "signature": "String!"
-        },
-        "organization": {
-          "number": 4,
-          "signature": "Organization?"
-        }
-      },
-      "retired": []
-    },
-    "GetUserPageResponse": {
-      "fields": {
-        "user": {
-          "number": 1,
-          "signature": "User?"
-        }
-      },
-      "retired": []
-    },
-    "GetUserSummaryRequest": {
-      "fields": {
-        "id": {
-          "number": 1,
-          "signature": "ID!"
-        }
-      },
-      "retired": []
-    },
-    "GetUserSummaryResponse_User": {
-      "fields": {
-        "id": {
-          "number": 1,
-          "signature": "ID!"
-        },
-        "name": {
-          "number": 2,
-          "signature": "String!"
-        }
-      },
-      "retired": []
-    },
-    "GetUserSummaryResponse": {
-      "fields": {
-        "user": {
-          "number": 1,
-          "signature": "User?"
-        }
-      },
-      "retired": []
-    },
     "GetAndroidUserPageRequest": {
       "fields": {
         "id": {
@@ -93,15 +10,11 @@
       },
       "retired": []
     },
-    "GetAndroidUserPageResponse_User_Organization": {
+    "GetAndroidUserPageResponse": {
       "fields": {
-        "name": {
+        "user": {
           "number": 1,
-          "signature": "String!"
-        },
-        "website": {
-          "number": 2,
-          "signature": "String!"
+          "signature": "User?"
         }
       },
       "retired": []
@@ -127,11 +40,15 @@
       },
       "retired": []
     },
-    "GetAndroidUserPageResponse": {
+    "GetAndroidUserPageResponse_User_Organization": {
       "fields": {
-        "user": {
+        "name": {
           "number": 1,
-          "signature": "User?"
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
         }
       },
       "retired": []
@@ -141,6 +58,15 @@
         "id": {
           "number": 1,
           "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetAndroidUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
         }
       },
       "retired": []
@@ -158,15 +84,6 @@
       },
       "retired": []
     },
-    "GetAndroidUserSummaryResponse": {
-      "fields": {
-        "user": {
-          "number": 1,
-          "signature": "User?"
-        }
-      },
-      "retired": []
-    },
     "GetIosUserPageRequest": {
       "fields": {
         "id": {
@@ -176,15 +93,11 @@
       },
       "retired": []
     },
-    "GetIosUserPageResponse_User_Organization": {
+    "GetIosUserPageResponse": {
       "fields": {
-        "name": {
+        "user": {
           "number": 1,
-          "signature": "String!"
-        },
-        "website": {
-          "number": 2,
-          "signature": "String!"
+          "signature": "User?"
         }
       },
       "retired": []
@@ -210,11 +123,15 @@
       },
       "retired": []
     },
-    "GetIosUserPageResponse": {
+    "GetIosUserPageResponse_User_Organization": {
       "fields": {
-        "user": {
+        "name": {
           "number": 1,
-          "signature": "User?"
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
         }
       },
       "retired": []
@@ -224,6 +141,15 @@
         "id": {
           "number": 1,
           "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetIosUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
         }
       },
       "retired": []
@@ -241,11 +167,85 @@
       },
       "retired": []
     },
-    "GetIosUserSummaryResponse": {
+    "GetUserPageRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse": {
       "fields": {
         "user": {
           "number": 1,
           "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse_User": {
+      "fields": {
+        "avatarUrl": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "id": {
+          "number": 2,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 3,
+          "signature": "String!"
+        },
+        "organization": {
+          "number": 4,
+          "signature": "Organization?"
+        }
+      },
+      "retired": []
+    },
+    "GetUserPageResponse_User_Organization": {
+      "fields": {
+        "name": {
+          "number": 1,
+          "signature": "String!"
+        },
+        "website": {
+          "number": 2,
+          "signature": "String!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryRequest": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryResponse": {
+      "fields": {
+        "user": {
+          "number": 1,
+          "signature": "User?"
+        }
+      },
+      "retired": []
+    },
+    "GetUserSummaryResponse_User": {
+      "fields": {
+        "id": {
+          "number": 1,
+          "signature": "ID!"
+        },
+        "name": {
+          "number": 2,
+          "signature": "String!"
         }
       },
       "retired": []

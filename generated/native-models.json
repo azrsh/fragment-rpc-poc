@@ -1371,41 +1371,41 @@
   ],
   "declarations": [
     {
+      "language": "swift",
       "declaration": "IosAvatarFragment",
       "kind": "fragment",
-      "language": "swift",
       "name": "IosAvatarFragmentData",
       "document": "fragment IosAvatar_user on User {\n  avatarUrl\n}",
       "operation": "IosAvatar_user"
     },
     {
+      "language": "swift",
       "declaration": "IosOrganizationBadgeFragment",
       "kind": "fragment",
-      "language": "swift",
       "name": "IosOrganizationBadgeFragmentData",
       "document": "fragment IosOrganizationBadge_organization on Organization {\n  name\n  website\n}",
       "operation": "IosOrganizationBadge_organization"
     },
     {
+      "language": "swift",
       "declaration": "IosUserCardFragment",
       "kind": "fragment",
-      "language": "swift",
       "name": "IosUserCardFragmentData",
       "document": "fragment IosUserCard_user on User {\n  id\n  name\n  ...IosAvatar_user\n  organization { ...IosOrganizationBadge_organization }\n}",
       "operation": "IosUserCard_user"
     },
     {
+      "language": "swift",
       "declaration": "IosUserPageQuery",
       "kind": "query",
-      "language": "swift",
       "name": "IosUserPageQueryData",
       "document": "query GetIosUserPage($id: ID!) {\n  user(id: $id) { ...IosUserCard_user }\n}",
       "operation": "GetIosUserPage"
     },
     {
       "language": "swift",
-      "kind": "query",
       "declaration": "IosUserSummaryQuery",
+      "kind": "query",
       "name": "IosUserSummaryQueryData",
       "document": "query GetIosUserSummary($id: ID!) {\n  user(id: $id) { id name }\n}",
       "operation": "GetIosUserSummary"

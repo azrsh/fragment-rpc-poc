@@ -53,7 +53,7 @@ targets:
         basedOnDependencyAnalysis: false
         script: |
           set -euo pipefail
-          export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+          export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/local/go/bin:$PATH"
           cd "$SRCROOT/../.."
           bash scripts/build-native-tools.sh
           bash scripts/generate-ios.sh
